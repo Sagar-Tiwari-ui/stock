@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Price Predictor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Stock Price Predictor</h1>
+    </header>
+    <main>
+        <section id="stock-exchange-selection">
+            <h2>Select Stock Exchange</h2>
+            <select id="exchange" name="exchange">
+                <option value="" disabled selected>Select a stock exchange</option>
+                <option value="bse">BSE (Bombay Stock Exchange)</option>
+                <option value="nse">NSE (National Stock Exchange)</option>
+            </select>
+        </section>
+
+        <section id="company-selection" style="display: none;">
+            <h2>Search Company</h2>
+            <div class="search-container">
+                <input type="text" id="company-search" placeholder="Type to search company..." autocomplete="off">
+                <div id="company-dropdown" class="dropdown">
+                    <ul></ul>
+                </div>
+            </div>
+            <input type="hidden" id="selected-company-symbol" value="">
+            <p id="selected-company-display" style="margin-top: 10px; font-weight: bold;"></p>
+        </section>
+
+        <section id="date-selection" style="display: none;">
+            <h2>Select Prediction Date</h2>
+            <input type="date" id="prediction-date" name="prediction-date">
+        </section>
+
+        <section id="prediction-action">
+            <button id="predict-button" disabled>Predict the Price</button>
+        </section>
+
+        <section id="prediction-results" style="display: none;">
+            <h2>Prediction Result</h2>
+            <p id="predicted-price"></p>
+            <h3>Percentage Deviation from Predicted Price</h3>
+            <p id="percentage-deviation"></p>
+        </section>
+
+        <section id="price-graph" style="display: none;">
+            <h2>Daily Price Graph</h2>
+            <canvas id="daily-price-chart"></canvas>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
